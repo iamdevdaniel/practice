@@ -1,4 +1,4 @@
-async function registerUser(email, { userRepo, emailService, analytics }) {
+export async function registerUser(email, { userRepo, emailService, analytics }) {
   if (!email || !email.includes("@")) {
     throw new Error("Invalid email");
   }
@@ -25,5 +25,3 @@ async function registerUser(email, { userRepo, emailService, analytics }) {
     userId: user.id,
   };
 }
-
-module.exports = { registerUser };
