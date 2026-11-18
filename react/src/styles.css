@@ -14,3 +14,48 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+/* Component styles */
+
+.list > ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	list-style: none;
+    padding-left: 0;
+}
+
+.task-item {
+	color: black;
+	background-color: aquamarine;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	min-height: 2rem;
+	display: grid;
+}
+
+.task-title {
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.task-priority {
+	background-color: bisque;
+	border-radius: 0.2rem;
+	display: inline-block;
+}
+
+.controls {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+	max-width: 900px;
+}
