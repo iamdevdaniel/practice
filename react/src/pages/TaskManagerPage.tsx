@@ -127,7 +127,7 @@ const filterStatusOptions = [
 	{ label: 'Study', id: 'study' }
 ]
 
-export default function TaskManagerExercise() {
+export default function TaskManagerPage() {
 
 	const [checked, setChecked] = React.useState<Task[]>(initialTasks)
 	const [searchTerm, setSearchTerm] = React.useState('')

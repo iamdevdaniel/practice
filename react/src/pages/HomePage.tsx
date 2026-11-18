@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { exercises } from '../exercises/exerciseRegistry.ts'
 
 export default function HomePage() {
   return (
@@ -9,15 +8,16 @@ export default function HomePage() {
         <p>Small exercises for rebuilding React and TypeScript fundamentals.</p>
 
         <ol className="exercise-list">
-          {exercises.map((exercise, index) => (
-            <li key={exercise.path}>
-              <Link to={exercise.path}>
-                <span>Exercise {index + 1}</span>
-                <strong>{exercise.title}</strong>
-                <span>{exercise.description}</span>
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link to="/exercises/task-manager">
+              <span>Exercise 1</span>
+              <strong>Task manager</strong>
+              <span>
+                Array rendering, search, filtering, sorting, updates, and
+                statistics.
+              </span>
+            </Link>
+          </li>
         </ol>
       </div>
     </main>

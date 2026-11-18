@@ -1,41 +1,43 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { exercises } from '../exercises/exerciseRegistry.ts'
 
 type ExercisePageProps = {
   children: ReactNode
-  exerciseIndex: number
+  number: number
+  total: number
+  previous?: string
+  next?: string
 }
 
 export default function ExercisePage({
   children,
-  exerciseIndex,
+  number,
+  total,
+  previous,
+  next,
 }: ExercisePageProps) {
-  const previousExercise = exercises[exerciseIndex - 1]
-  const nextExercise = exercises[exerciseIndex + 1]
-
   return (
     <div className="exercise-page">
       <header className="exercise-header">
         <Link to="/">← All exercises</Link>
         <span>
-          Exercise {exerciseIndex + 1} of {exercises.length}
+          Exercise {number} of {total}
         </span>
       </header>
 
       {children}
 
       <nav className="exercise-pagination" aria-label="Exercise pagination">
-        {previousExercise ? (
-          <Link to={previousExercise.path}>← {previousExercise.title}</Link>
+        {previous ? (
+          <Link to={previous}>← Previous</Link>
         ) : (
           <span aria-disabled="true">← Previous</span>
         )}
 
         <Link to="/">Home</Link>
 
-        {nextExercise ? (
-          <Link to={nextExercise.path}>{nextExercise.title} →</Link>
+        {next ? (
+          <Link to={next}>Next →</Link>
         ) : (
           <span aria-disabled="true">Next →</span>
         )}
